@@ -1,0 +1,120 @@
+.letra {
+    color: #167ce9;
+  }
+  .ftco-section-3 {
+    padding: 7em 0;
+    position: relative;
+  }
+  
+  /*.imagen_fondo {
+    background-image: url(images/course-1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 20em;
+    background: -webkit-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
+  }*/
+  
+  .hero-wrap {
+    width: 100%;
+    height: 600px;
+    position: relative;
+  }
+  
+  .hero-wrap .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    opacity: 0.7;
+    background: #6a00ff;
+    background: -moz-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
+    background: -webkit-gradient(
+      left top,
+      right top,
+      color-stop(0%, #6a00ff),
+      color-stop(100%, #ffd900)
+    );
+    background: -webkit-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
+    background: -o-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
+    background: -ms-linear-gradient(left, #6a00ff 0%, #ffd900 100%);
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#6a00ff),
+      to(#ffd900)
+    );
+    background: linear-gradient(to right, #6a00ff 0%, #ffd900 100%);
+  }
+  
+  .slider-text {
+    color: #fff;
+    height: 600px;
+  }
+  .slider-text h1 {
+    font-size: 60px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+  @media (max-width: 991.98px) {
+    .slider-text h1 {
+      font-size: 40px;
+    }
+  }
+  .slider-text p {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .slider-text p strong {
+    font-weight: 700;
+  }
+  .slider-text p strong a {
+    color: #1b212c;
+  }
+  .slider-text .breadcrumbs {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    z-index: 99;
+  }
+  .slider-text .breadcrumbs span {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .slider-text .breadcrumbs span a {
+    color: #fff;
+  }
+  .slider-text .bread {
+    font-weight: 400 !important;
+  }
+  .slider-text .btn-primary {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    border-radius: 30px;
+  }
+  .slider-text .btn-primary:hover,
+  .slider-text .btn-primary:focus {
+    background: #fff !important;
+    color: #1b212c;
+  }
+  .ftco-animated {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .justify-content-center {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }

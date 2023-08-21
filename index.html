@@ -1,38 +1,98 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manuales con Bootstrap</title>
-    <!-- Agrega el enlace al archivo CSS de Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Manuales</h1>
-        
-        <div class="card">
-            <div class="card-header">
-                <h2>Manual de Uso</h2>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/LogoIntegraciones.png">
+    <title>Integraciones</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="img/logo.png" alt="Logo" height="50"></img>
+          <span class="fs-4 letra">Integraciones</span>
+        </a>
+<!--
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="Index.html" class="nav-link active" aria-current="inicio">Inicio</a></li>
+        </ul>
+      </header>
+    </div>
+-->
+    <div class="hero-wrap" style="background-image: url('images/bg_1.jpg'); background-attachment:fixed;">
+      <div class="overlay">
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center">
+            <div class="col-md-8 ftco-animate text-center">
+              <h1 class="mb-4">Integraciones</h1>
             </div>
-            <div class="card-body">
-                <p>Este es un manual que explica cómo usar nuestro SFTP para el envío de archivo centralización.</p>
-                <p>Puedes encontrar más información en el archivo <a href="Manuales/SFTP_envio_archivo_centralizacion/SFTP_centralizacion.html" target="_blank">PDF de Manual de Uso</a>.</p>
-            </div>
+          </div>
         </div>
-        
-        <div class="card mt-4">
-            <div class="card-header">
-                <h2>Manual de Instalación</h2>
-            </div>
-            <div class="card-body">
-                <p>El manual de instalación detalla los pasos para instalar y configurar nuestro software.</p>
-                <p>Puedes ver el manual en línea en <a href="manual_instalacion.html">Manual de Instalación</a>.</p>
-            </div>
-        </div>
+      </div>
+    </div>
+      
     </div>
 
-    <!-- Agrega el enlace al archivo JS de Bootstrap (opcional) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <section class="ftco-section-3">
+          <div class="container">
+             <!--
+            <div class="row justify-content-center mb-5 pb-3">
+              <div class="col-md-7 heading-section text-center">
+                <h2 class="mb-4">Accesos Directos</h2>
+              </div>
+            </div>
+            -->
+          <!-- Tarjeta 1 -->
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">SFTP Centralización</h5>
+                  <p class="card-text">En este manual podrar revisar las configuraciones necesarias para habilitar el envio de la centralización mediante el servidor SFTP.</p>
+                  <a href="Manuales/SFTP_envio_archivo_centralizacion/SFTP_centralizacion.html" class="btn btn-primary">Ir</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">SFTP Archivo Banco</h5>
+                  <p class="card-text">En este manual podrar revisar las configuraciones necesarias para habilitar el envio del archivo de banco mediante el servidor SFTP.</p>
+                  <a href="Manuales/SFTP_envio_archivo_centralizacion/SFTP_archivo_banco.html" class="btn btn-primary">Ir</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Probar el envío archivo SFTP</h5>
+                  <p class="card-text">En este manual podrar revisar las configuraciones necesarias para habilitar el envio de la centralización mediante el servidor SFTP.</p>
+                  <a href="Manuales/SFTP_envio_archivo_centralizacion/SFTP_pruebas.html" class="btn btn-primary">Ir</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Configuración SSO</h5>
+                  <p class="card-text">En este manual podrar revisar las configuraciones necesarias para configurar tu SSO.</p>
+                  <a href="Manuales/SFTP_envio_archivo_centralizacion/sso.html" class="btn btn-primary">Ir</a>
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
 </html>
