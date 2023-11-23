@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
 </head>
+
 <body>
 
   <div class="container mt-5">
@@ -18,7 +20,7 @@
       <img src="img/buk_trabajo_feliz.png" alt="Logo" height="90">
       <h2 class="ml-2"></h2>
     </div>
-
+    <p>La fecha de hoy es: <span id="fechaActual"></span></p>
     <!-- Tabla -->
     <h1 class="text-center">Manuales Integraciones</h1><br>
     <table class="table table-hover">
@@ -37,10 +39,11 @@
           <td>Envio de Centralización por SFTP</td>
           <td>23-11-2023</td>
           <td>Verificar la configuración del SFTP para el envío del archivo centralización</td>
-<td><a href="Manuales/Centralización_a_SFTP/index_centralizacion_a_sftp.html" class="btn btn-link"><i class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></a></td>
+          <td><a href="Manuales/Centralización_a_SFTP/index_centralizacion_a_sftp.html" class="btn btn-link"><i
+                class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></a></td>
 
-          
-          
+
+
         </tr>
         <!-- Repite lo mismo para más filas -->
         <tr>
@@ -48,7 +51,8 @@
           <td>Envio de Banco por SFTP</td>
           <td>23-11-2023</td>
           <td>Verificar la configuración del SFTP para el envío del archivo banco</td>
-          <td><a href="Manuales/banco_a_SFTP/index_banco_a_sftp.html" class="btn btn-link"><i class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></a></td>
+          <td><a href="Manuales/banco_a_SFTP/index_banco_a_sftp.html" class="btn btn-link"><i
+                class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></a></td>
         </tr>
         <!-- ... Puedes agregar más filas según necesites -->
         <tr>
@@ -56,21 +60,24 @@
           <td>Prueba SFTP</td>
           <td>23-11-2023</td>
           <td>Veremos el paso a paso para probar el envío del archivo banco o centralización al SFTP de BUK</td>
-          <td><a href="Manuales/probar_servidor_SFTP/index_probar_servidor_sftp.html" class="btn btn-link"><i class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></a></td>
+          <td><a href="Manuales/probar_servidor_SFTP/index_probar_servidor_sftp.html" class="btn btn-link"><i
+                class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></a></td>
         </tr>
         <tr>
           <td>SSO</td>
           <td>Configurar SSO OAUTH</td>
           <td>23-11-2023</td>
           <td>Veremos como configurar el SSO - Protocolo OAUTH</td>
-          <td><a href="Manuales/sso_oauth/index_sso_oauth.html" class="btn btn-link"><i class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></a></td>
+          <td><a href="Manuales/sso_oauth/index_sso_oauth.html" class="btn btn-link"><i class="bi bi-box-arrow-in-right"
+                style="font-size: 2rem;"></i></a></td>
         </tr>
         <tr>
           <td>SSO</td>
           <td>Configurar SSO SAML</td>
           <td>23-11-2023</td>
           <td>Veremos como configurar el SSO - Protocolo SAML</td>
-          <td><a href="Manuales/sso_saml/index_sso_saml.html" class="btn btn-link"><i class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></a></td>
+          <td><a href="Manuales/sso_saml/index_sso_saml.html" class="btn btn-link"><i class="bi bi-box-arrow-in-right"
+                style="font-size: 2rem;"></i></a></td>
         </tr>
       </tbody>
     </table>
@@ -85,6 +92,19 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+    // Obtener la fecha actual
+    var fecha = new Date();
+
+    // Formatear la fecha como "DD-MM-YYYY" (puedes ajustar el formato según tus preferencias)
+    var formatoFecha = (fecha.getDate() < 10 ? '0' : '') + fecha.getDate() + '-' +
+      ((fecha.getMonth() + 1) < 10 ? '0' : '') + (fecha.getMonth() + 1) + '-' +
+      fecha.getFullYear();
+
+    // Mostrar la fecha en el elemento con el id "fechaActual"
+    document.getElementById('fechaActual').textContent = formatoFecha;
+  </script>
 
 </body>
+
 </html>
