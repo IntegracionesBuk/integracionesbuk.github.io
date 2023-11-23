@@ -6,6 +6,7 @@
     <title>SSO SAML</title>
     <!-- Agrega la referencia a Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
     <style>
         body {
@@ -32,7 +33,7 @@
         }
 
         /* Utiliza las clases de Bootstrap para estilizar los botones */
-        .boton {
+        .btn-link {
             position: absolute;
             bottom: -50px; /* Oculta los botones por defecto */
             cursor: pointer;
@@ -40,24 +41,23 @@
         }
 
         #botonAnterior {
-            left: 10%;
-            padding: 10px 10px;
+            left: 30%;
+            padding: 05px 10px;
         }
 
         #botonDerivar {
-            left: 30%;
-            padding: 10px 10px;
+            left: 40%;
+            padding: 05px 10px;
         }
 
         #botonInicio {
             left: 50%;
-            padding: 10px 20px;
-            color: #fff;
+            padding: 05px 20px;
         }
 
         #botonModal {
-            left: 70%;
-            padding: 10px 10px;
+            left: 60%;
+            padding: 05px 10px;
         }
     </style>
 </head>
@@ -66,10 +66,10 @@
     <div id="contenedorImagen">
         <img id="imagenGrande" src="images/0.png" alt="Imagen">
         <!-- Utiliza las clases de Bootstrap para estilizar los botones -->
-        <button id="botonAnterior" class="btn btn-primary boton" onclick="imagenAnterior()" onmouseleave="ocultarBotones()">Anterior</button>
-        <button id="botonDerivar" class="btn btn-primary boton" onclick="cambiarImagen()" onmouseleave="ocultarBotones()">Siguiente</button>
-        <button id="botonInicio" class="btn btn-success boton" onclick="irAOtraPagina()" onmouseleave="ocultarBotones()">Inicio</button>
-        <button id="botonModal" class="btn btn-info boton" data-toggle="modal" data-target="#miModal" onmouseleave="ocultarBotones()">Ayuda</button>
+        <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()" onmouseleave="ocultarBotones()"><i class="bi bi-arrow-left-circle" style="font-size: 2rem;"></i></button>
+        <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()" onmouseleave="ocultarBotones()"><i class="bi bi-arrow-right-circle" style="font-size: 2rem;"></i></button>
+        <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()" onmouseleave="ocultarBotones()"><i class="bi bi-house-door-fill" style="font-size: 2rem;"></i></button>
+        <button id="botonModal" class="btn btn-link" data-toggle="modal" data-target="#miModal" onmouseleave="ocultarBotones()"><i class="bi bi-question-circle" style="font-size: 2rem;"></i></button>
     </div>
 
     <!-- Modal -->
@@ -155,13 +155,13 @@
             var distanciaDesdeAbajo = alturaPantalla - posicionMouseY;
 
             if (distanciaDesdeAbajo <= 50) {
-                document.querySelectorAll('.boton').forEach(boton => boton.style.bottom = '10px');
+                document.querySelectorAll('.btn-link').forEach(boton => boton.style.bottom = '10px');
             }
         }
 
         function ocultarBotones() {
             // Oculta los botones cuando el mouse sale del área de los botones y de la imagen
-            document.querySelectorAll('.boton').forEach(boton => boton.style.bottom = '-50px');
+            document.querySelectorAll('.btn-link').forEach(boton => boton.style.bottom = '-50px');
         }
     </script>
 
