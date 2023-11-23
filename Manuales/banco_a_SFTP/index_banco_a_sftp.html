@@ -39,6 +39,11 @@
             transition: bottom 0.5s ease-in-out;
         }
 
+        #botonAnterior {
+            left: 10%;
+            padding: 10px 10px;
+        }
+
         #botonDerivar {
             left: 30%;
             padding: 10px 10px;
@@ -61,6 +66,7 @@
     <div id="contenedorImagen">
         <img id="imagenGrande" src="images/screens/0.png" alt="Imagen">
         <!-- Utiliza las clases de Bootstrap para estilizar los botones -->
+        <button id="botonAnterior" class="btn btn-warning boton" onclick="imagenAnterior()" onmouseleave="ocultarBotones()">Anterior</button>
         <button id="botonDerivar" class="btn btn-primary boton" onclick="cambiarImagen()" onmouseleave="ocultarBotones()">Siguiente</button>
         <button id="botonInicio" class="btn btn-success boton" onclick="irAOtraPagina()" onmouseleave="ocultarBotones()">Inicio</button>
         <button id="botonModal" class="btn btn-info boton" data-toggle="modal" data-target="#miModal" onmouseleave="ocultarBotones()">Ayuda</button>
@@ -116,6 +122,24 @@
             // Ciclo circular
             if (indiceActual >= imagenes.length) {
                 indiceActual = 0;
+            }
+
+            // Aplicar transición de fundido
+            document.getElementById("imagenGrande").style.opacity = 0;
+
+            // Cambiar la imagen después de la transición
+            setTimeout(function () {
+                document.getElementById("imagenGrande").src = imagenes[indiceActual];
+                document.getElementById("imagenGrande").style.opacity = 1;
+            }, 500); // 500 milisegundos, igual a la duración de la transición
+        }
+
+        function imagenAnterior() {
+            indiceActual--;
+
+            // Ciclo circular
+            if (indiceActual < 0) {
+                indiceActual = imagenes.length - 1;
             }
 
             // Aplicar transición de fundido

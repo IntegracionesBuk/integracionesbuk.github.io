@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Probar SFTP</title>
+    <title>SSO SAML</title>
     <!-- Agrega la referencia a Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -64,7 +64,7 @@
 <body onmousemove="mostrarBotones(event)" onmouseleave="ocultarBotones()">
 
     <div id="contenedorImagen">
-        <img id="imagenGrande" src="images/screens/0.png" alt="Imagen">
+        <img id="imagenGrande" src="images/0.png" alt="Imagen">
         <!-- Utiliza las clases de Bootstrap para estilizar los botones -->
         <button id="botonAnterior" class="btn btn-warning boton" onclick="imagenAnterior()" onmouseleave="ocultarBotones()">Anterior</button>
         <button id="botonDerivar" class="btn btn-primary boton" onclick="cambiarImagen()" onmouseleave="ocultarBotones()">Siguiente</button>
@@ -83,12 +83,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                  Backup URL: 18.228.40.92
-                  Puerto: 998
-                  Protocolo: SFTP
-                  User: buksftp
-                  Contraseña: M2f4bc3WCjqaCL3r
-                  Folder: data/
+                    Contenido del modal...
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -98,19 +93,19 @@
     </div>
 
     <script>
-        var imagenes = ["images/screens/0.png",
-                        "images/screens/1.png",
-                        "images/screens/2.png",
-                        "images/screens/3.png",
-                        "images/screens/4.png",
-                        "images/screens/5.png",
-                        "images/screens/6.png",
-                        "images/screens/7.png",
-                        "images/screens/8.png",
-                        "images/screens/9.png",
-                        "images/screens/10.png",
-                        "images/screens/20.png",
-                        "images/screens/21.png"];
+        var imagenes = ["images/0.png",
+                        "images/1.png",
+                        "images/2.png",
+                        "images/3.png",
+                        "images/4.png",
+                        "images/5.png",
+                        "images/6.png",
+                        "images/7.png",
+                        "images/8.png",
+                        "images/9.png",
+                        "images/10.png",
+                        "images/11.png",
+                        "images/12.png"];
         var indiceActual = 0;
 
         function cambiarImagen() {
@@ -131,10 +126,6 @@
             }, 500); // 500 milisegundos, igual a la duración de la transición
         }
 
-        function irAOtraPagina() {
-            window.location.href = "/index.html"; // Cambia "otra_pagina.html" al nombre de tu archivo HTML
-        }
-
         function imagenAnterior() {
             indiceActual--;
 
@@ -151,6 +142,10 @@
                 document.getElementById("imagenGrande").src = imagenes[indiceActual];
                 document.getElementById("imagenGrande").style.opacity = 1;
             }, 500); // 500 milisegundos, igual a la duración de la transición
+        }
+
+        function irAOtraPagina() {
+            window.location.href = "/index.html"; // Cambia "otra_pagina.html" al nombre de tu archivo HTML
         }
 
         function mostrarBotones(event) {
