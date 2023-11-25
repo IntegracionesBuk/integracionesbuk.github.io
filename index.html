@@ -2,145 +2,147 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio</title>
-  <!-- Agrega la referencia a Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <!-- Agrega la referencia a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 
 <body>
 
-  <div class="container mt-5">
+    <div class="container mt-5">
 
-    <!-- Logo en la parte superior izquierda -->
-    <div class="d-flex align-items-center mb-3">
-      <img src="img/buk_trabajo_feliz.png" alt="Logo" height="90">
-      <h2 class="ml-2"></h2>
-    </div>
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2 class="ml-2"></h2>
-      <button id="botonModal" class="btn btn-link" data-toggle="modal" data-target="#miModal"><i class="bi bi-info-circle-fill" style="font-size: 2rem;"></i></button>
-    </div>
-    <p>La fecha de hoy es: <span id="fechaActual"></span></p>
+        <!-- Logo en la parte superior izquierda -->
+        <div class="d-flex align-items-center mb-3">
+            <img src="img/buk_trabajo_feliz.png" alt="Logo" height="90">
+            <h2 class="ml-2"></h2>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="ml-2"></h2>
+            <button id="botonModal" class="btn btn-link" data-toggle="modal" data-target="#miModal"><i
+                    class="bi bi-info-circle-fill" style="font-size: 2rem;"></i></button>
+        </div>
+        <p>La fecha de hoy es: <span id="fechaActual"></span></p>
 
-  <!-- Modal -->
-  <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Información</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Contenido del modal...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <!-- Modal -->
+        <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Información</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Contenido del modal...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Tabla -->
+        <h1 class="text-center">Manuales Integraciones</h1><br>
+        <!-- Filtro -->
+        <div class="row justify-content-end">
+            <div class="col-3">
+                <input type="text" id="filtro" class="form-control mb-3" placeholder="&#128269;">
+            </div>
+        </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Nombre</th>
+                    <th>Fecha actualización</th>
+                    <th>Descripción</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tablaContenido">
+                <!-- Contenido de la tabla se agregará aquí dinámicamente -->
+            </tbody>
+        </table>
     </div>
-</div>
 
-    <!-- Tabla -->
-    <h1 class="text-center">Manuales Integraciones</h1><br>
-     <!-- Filtro -->
-     <div class="row justify-content-end">
-      <div class="col-3">
-        <input type="text" id="filtro" class="form-control mb-3" placeholder="&#128269;">
-      </div>
-  </div>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Tipo</th>
-          <th>Nombre</th>
-          <th>Fecha actualización</th>
-          <th>Descripción</th>
-          <th>Acción</th>
-        </tr>
-      </thead>
-      <tbody id="tablaContenido">
-        <!-- Contenido de la tabla se agregará aquí dinámicamente -->
-      </tbody>
-    </table>
-  </div>
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3 mt-5">
+        <img src="img/integraciones_by_buk.png" alt="Footer Image" height="100"></img></br>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="bg-light text-center py-3 mt-5">
-    <img src="img/integraciones_by_buk.png" alt="Footer Image" height="100"></img></br>
-  </footer>
+    <!-- Agrega la referencia a Bootstrap JS y Popper.js (necesarios para algunas funcionalidades de Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        // Obtener la fecha actual
+        var fecha = new Date();
+        // Formatear la fecha como "DD-MM-YYYY" (puedes ajustar el formato según tus preferencias)
+        var formatoFecha = (fecha.getDate() < 10 ? '0' : '') + fecha.getDate() + '-' +
+            ((fecha.getMonth() + 1) < 10 ? '0' : '') + (fecha.getMonth() + 1) + '-' +
+            fecha.getFullYear();
+        // Mostrar la fecha en el elemento con el id "fechaActual"
+        document.getElementById('fechaActual').textContent = formatoFecha;
 
-  <!-- Agrega la referencia a Bootstrap JS y Popper.js (necesarios para algunas funcionalidades de Bootstrap) -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script>
-    // Obtener la fecha actual
-    var fecha = new Date();
-    // Formatear la fecha como "DD-MM-YYYY" (puedes ajustar el formato según tus preferencias)
-    var formatoFecha = (fecha.getDate() < 10 ? '0' : '') + fecha.getDate() + '-' +
-      ((fecha.getMonth() + 1) < 10 ? '0' : '') + (fecha.getMonth() + 1) + '-' +
-      fecha.getFullYear();
-    // Mostrar la fecha en el elemento con el id "fechaActual"
-    document.getElementById('fechaActual').textContent = formatoFecha;
+        // Función para cargar y mostrar datos desde data.json
+        function cargarDatos() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Guardar los datos en una variable global
+                    window.datos = data;
+                    mostrarDatosEnTabla(data);
+                })
+                .catch(error => console.error('Error al cargar los datos', error));
+        }
 
-    // Función para cargar y mostrar datos desde data.json
-  function cargarDatos() {
-    fetch('data.json')
-      .then(response => response.json())
-      .then(data => {
-        // Guardar los datos en una variable global
-        window.datos = data;
-        mostrarDatosEnTabla(data);
-      })
-      .catch(error => console.error('Error al cargar los datos', error));
-  }
+        // Función para mostrar los datos en la tabla
+        function mostrarDatosEnTabla(datos) {
+            const tablaContenido = document.getElementById('tablaContenido');
+            tablaContenido.innerHTML = '';
 
-  // Función para mostrar los datos en la tabla
-  function mostrarDatosEnTabla(datos) {
-    const tablaContenido = document.getElementById('tablaContenido');
-    tablaContenido.innerHTML = '';
-
-    // Recorrer los datos y agregar filas a la tabla
-    datos.forEach(item => {
-      const fila = document.createElement('tr');
-      fila.innerHTML = `
+            // Recorrer los datos y agregar filas a la tabla
+            datos.forEach(item => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
         <td>${item.tipo}</td>
         <td>${item.nombre}</td>
         <td>${item.fecha}</td>
         <td>${item.descripcion}</td>
         <td><a href="${item.enlace}" class="btn btn-link"><i class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></a></td>
       `;
-      tablaContenido.appendChild(fila);
-    });
-  }
+                tablaContenido.appendChild(fila);
+            });
+        }
 
-  // Mostrar todos los datos inicialmente
-  cargarDatos();
+        // Mostrar todos los datos inicialmente
+        cargarDatos();
 
-  // Agregar evento de escucha al campo de filtro
-  document.getElementById('filtro').addEventListener('input', function () {
-    // Obtener el valor del filtro
-    var filtro = this.value.toLowerCase();
+        // Agregar evento de escucha al campo de filtro
+        document.getElementById('filtro').addEventListener('input', function () {
+            // Obtener el valor del filtro
+            var filtro = this.value.toLowerCase();
 
-    // Filtrar los datos
-    var datosFiltrados = window.datos.filter(function (item) {
-      return (
-        item.tipo.toLowerCase().includes(filtro) ||
-        item.nombre.toLowerCase().includes(filtro) ||
-        item.fecha.toLowerCase().includes(filtro) ||
-        item.descripcion.toLowerCase().includes(filtro)
-      );
-    });
+            // Filtrar los datos
+            var datosFiltrados = window.datos.filter(function (item) {
+                return (
+                    item.tipo.toLowerCase().includes(filtro) ||
+                    item.nombre.toLowerCase().includes(filtro) ||
+                    item.fecha.toLowerCase().includes(filtro) ||
+                    item.descripcion.toLowerCase().includes(filtro)
+                );
+            });
 
-    // Mostrar los datos filtrados en la tabla
-    mostrarDatosEnTabla(datosFiltrados);
-  });
-</script>
+            // Mostrar los datos filtrados en la tabla
+            mostrarDatosEnTabla(datosFiltrados);
+        });
+    </script>
 </body>
 
 </html>

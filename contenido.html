@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual</title>
+    <!-- Agrega la referencia a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        #contenedorImagen {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #imagenGrande {
+            max-width: 100%;
+            max-height: 100%;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Utiliza las clases de Bootstrap para estilizar los botones */
+        .btn-link {
+            position: absolute;
+            bottom: 10px;
+            /* Muestra los botones siempre a 10px del borde inferior */
+            cursor: pointer;
+            transition: bottom 0.5s ease-in-out;
+        }
+
+        #botonAnterior {
+            left: 30%;
+            padding: 5px 10px;
+        }
+
+        #botonDerivar {
+            left: 40%;
+            padding: 5px 10px;
+        }
+
+        #botonInicio {
+            left: 50%;
+            padding: 5px 20px;
+        }
+
+        #botonModal {
+            left: 60%;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="contenedorImagen">
+        <img id="imagenGrande" src="img/buk_trabajo_feliz.png" alt="Imagen">
+        <!-- Utiliza las clases de Bootstrap para estilizar los botones -->
+        <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()"><i
+                class="bi bi-arrow-left-circle-fill" style="font-size: 2rem;"></i></button>
+        <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()"><i
+                class="bi bi-arrow-right-circle-fill" style="font-size: 2rem;"></i></button>
+        <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()"><i class="bi bi-house-door-fill"
+                style="font-size: 2rem;"></i></button>
+        <button id="botonModal" class="btn btn-link" data-toggle="modal" onclick="mostrarContenidoModal()" data-target="#miModal"><i
+                class="bi bi-info-circle-fill" style="font-size: 2rem;"></i></button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tienes dudas?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Contenido del modal según la opción seleccionada -->
+                    <div id="modalContent"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const opcionSeleccionada = urlParams.get('option');
+
+        // Definir diferentes arreglos según la opción
+        const opciones = {
+            sso_oauth: ["imagenes/sso_oauth_0.png",
+                "imagenes/sso_oauth_1.png",
+                "imagenes/sso_oauth_2.png",
+                "imagenes/sso_oauth_3.png",
+                "imagenes/sso_oauth_4.png",
+                "imagenes/sso_oauth_5.png",
+                "imagenes/sso_oauth_6.png",
+                "imagenes/sso_oauth_7.png",
+                "imagenes/sso_oauth_8.png",
+                "imagenes/sso_oauth_9.png",
+                "imagenes/sso_oauth_10.png",
+                "imagenes/sso_oauth_11.png",
+                "imagenes/sso_oauth_12.png",
+                "imagenes/sso_oauth_13.png",
+                "imagenes/sso_oauth_14.png",
+                "imagenes/sso_oauth_15.png"
+            ],
+            sso_saml: ["imagenes/sso_saml_0.png",
+                "imagenes/sso_saml_1.png",
+                "imagenes/sso_saml_2.png",
+                "imagenes/sso_saml_3.png",
+                "imagenes/sso_saml_4.png",
+                "imagenes/sso_saml_5.png",
+                "imagenes/sso_saml_6.png",
+                "imagenes/sso_saml_7.png",
+                "imagenes/sso_saml_8.png",
+                "imagenes/sso_saml_9.png",
+                "imagenes/sso_saml_10.png",
+                "imagenes/sso_saml_11.png",
+                "imagenes/sso_saml_12.png"
+            ],
+            probar_sftp: ["imagenes/probar_sftp_0.png",
+                "imagenes/probar_sftp_1.png",
+                "imagenes/probar_sftp_2.png",
+                "imagenes/probar_sftp_3.png",
+                "imagenes/probar_sftp_4.png",
+                "imagenes/probar_sftp_5.png",
+                "imagenes/probar_sftp_6.png",
+                "imagenes/probar_sftp_7.png",
+                "imagenes/probar_sftp_8.png",
+                "imagenes/probar_sftp_9.png",
+                "imagenes/probar_sftp_10.png",
+                "imagenes/probar_sftp_20.png",
+                "imagenes/probar_sftp_21.png"],
+
+            centralizacion_sftp: ["imagenes/centra_a_sftp_0.png",
+                "imagenes/centra_a_sftp_1.png",
+                "imagenes/centra_a_sftp_2.png",
+                "imagenes/centra_a_sftp_3.png",
+                "imagenes/centra_a_sftp_4.png",
+                "imagenes/centra_a_sftp_5.png",
+                "imagenes/centra_a_sftp_6.png",
+                "imagenes/centra_a_sftp_7.png",
+                "imagenes/centra_a_sftp_8.png",
+                "imagenes/centra_a_sftp_9.png",
+                "imagenes/centra_a_sftp_10.png",
+                "imagenes/centra_a_sftp_20.png",
+                "imagenes/centra_a_sftp_21.png",
+                "imagenes/centra_a_sftp_22.png",
+                "imagenes/centra_a_sftp_23.png",
+                "imagenes/centra_a_sftp_24.png",
+                "imagenes/centra_a_sftp_25.png",
+                "imagenes/centra_a_sftp_26.png"],
+
+            banco_sftp: ["imagenes/banco_a_sftp_0.png",
+                "imagenes/banco_a_sftp_1.png",
+                "imagenes/banco_a_sftp_2.png",
+                "imagenes/banco_a_sftp_3.png",
+                "imagenes/banco_a_sftp_4.png",
+                "imagenes/banco_a_sftp_5.png",
+                "imagenes/banco_a_sftp_6.png",
+                "imagenes/banco_a_sftp_7.png",
+                "imagenes/banco_a_sftp_8.png",
+                "imagenes/banco_a_sftp_9.png",
+                "imagenes/banco_a_sftp_10.png",
+                "imagenes/banco_a_sftp_20.png",
+                "imagenes/banco_a_sftp_21.png",
+                "imagenes/banco_a_sftp_22.png",
+                "imagenes/banco_a_sftp_23.png",
+                "imagenes/banco_a_sftp_24.png",
+                "imagenes/banco_a_sftp_25.png",
+                "imagenes/banco_a_sftp_26.png",
+                "imagenes/banco_a_sftp_27.png",
+                "imagenes/banco_a_sftp_28.png",
+                "imagenes/banco_a_sftp_29.png"],
+        };
+
+        const contenido = document.getElementById('contenido');
+        if (opciones[opcionSeleccionada]) {
+            imagenes = opciones[opcionSeleccionada];
+        } else {
+            imagenes = 'Opción no válida';
+        }
+
+        var indiceActual = -1;
+
+        function cambiarImagen() {
+            indiceActual++;
+
+            // Ciclo circular
+            if (indiceActual >= imagenes.length) {
+                indiceActual = 0;
+            }
+
+            // Aplicar transición de fundido
+            document.getElementById("imagenGrande").style.opacity = 0;
+
+            // Cambiar la imagen después de la transición
+            setTimeout(function () {
+                document.getElementById("imagenGrande").src = imagenes[indiceActual];
+                document.getElementById("imagenGrande").style.opacity = 1;
+            }, 500); // 500 milisegundos, igual a la duración de la transición
+        }
+
+        function imagenAnterior() {
+            indiceActual--;
+
+            // Ciclo circular
+            if (indiceActual < 0) {
+                indiceActual = imagenes.length - 1;
+            }
+
+            // Aplicar transición de fundido
+            document.getElementById("imagenGrande").style.opacity = 0;
+
+            // Cambiar la imagen después de la transición
+            setTimeout(function () {
+                document.getElementById("imagenGrande").src = imagenes[indiceActual];
+                document.getElementById("imagenGrande").style.opacity = 1;
+            }, 500); // 500 milisegundos, igual a la duración de la transición
+        }
+        function mostrarContenidoModal() {
+            const modalContent = document.getElementById('modalContent');
+
+            // Limpia el contenido actual del modal
+            modalContent.innerHTML = '';
+
+            // Muestra el contenido según la opción seleccionada
+            if (opcionSeleccionada === 'sso_oauth') {
+                modalContent.innerHTML = 'Contenido específico para sso_oauth';
+            } else if (opcionSeleccionada === 'sso_saml') {
+                modalContent.innerHTML = 'Contenido específico para sso_saml';
+            } else if (opcionSeleccionada === 'probar_sftp') {
+                modalContent.innerHTML = 'Contenido específico para probar_sftp';
+            } else if (opcionSeleccionada === 'centralizacion_sftp') {
+                modalContent.innerHTML = 'Contenido específico para centralizacion_sftp';
+            } else if (opcionSeleccionada === 'banco_sftp') {
+                modalContent.innerHTML = 'Contenido específico para banco_sftp';
+            } else {
+                // Opción no válida
+                modalContent.innerHTML = 'Opción no válida';
+            }
+            $('#miModal').modal('show');
+        }
+
+        function irAOtraPagina() {
+            window.location.href = "/index.html"; // Cambia "otra_pagina.html" al nombre de tu archivo HTML
+        }
+    </script>
+
+    <!-- Agrega la referencia a Bootstrap JS y Popper.js (necesarios para algunas funcionalidades de Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
