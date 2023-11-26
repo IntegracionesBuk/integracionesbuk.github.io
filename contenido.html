@@ -61,6 +61,14 @@
             left: 60%;
             padding: 5px 10px;
         }
+
+        #contadorImagenes {
+            position: absolute;
+            bottom: 10px;
+            left: 30px;
+            color: rgb(0, 0, 0);
+            font-size: 1rem;
+        }
     </style>
 </head>
 
@@ -68,6 +76,7 @@
 
     <div id="contenedorImagen">
         <img id="imagenGrande" alt="Imagen">
+        
     </div>
     <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()"><i
             class="bi bi-arrow-left-circle-fill" style="font-size: 2rem;"></i></button>
@@ -77,7 +86,7 @@
             style="font-size: 2rem;"></i></button>
     <button id="botonModal" class="btn btn-link" data-toggle="modal" onclick="mostrarContenidoModal()"
         data-target="#miModal"><i class="bi bi-info-circle-fill" style="font-size: 2rem;"></i></button>
-
+        <div id="contadorImagenes">1 / 1</div>
     <!-- Modal -->
     <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -230,6 +239,10 @@
             setTimeout(function () {
                 document.getElementById("imagenGrande").src = imagenes[indiceActual];
                 document.getElementById("imagenGrande").style.opacity = 1;
+
+                // Actualizar el contador de imágenes
+                const contador = document.getElementById("contadorImagenes");
+                contador.textContent = `${indiceActual + 1} / ${imagenes.length}`;
             }, 500); // 500 milisegundos, igual a la duración de la transición
         }
 
