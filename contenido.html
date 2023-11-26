@@ -67,12 +67,12 @@
 <body>
 
     <div id="contenedorImagen">
-        <img id="imagenGrande" src="imagenes/inicio.png" alt="Imagen">
+        <img id="imagenGrande" alt="Imagen">
     </div>
-    <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()"><i class="bi bi-arrow-left-circle-fill"
-            style="font-size: 2rem;"></i></button>
-    <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()"><i class="bi bi-arrow-right-circle-fill"
-            style="font-size: 2rem;"></i></button>
+    <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()"><i
+            class="bi bi-arrow-left-circle-fill" style="font-size: 2rem;"></i></button>
+    <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()"><i
+            class="bi bi-arrow-right-circle-fill" style="font-size: 2rem;"></i></button>
     <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()"><i class="bi bi-house-door-fill"
             style="font-size: 2rem;"></i></button>
     <button id="botonModal" class="btn btn-link" data-toggle="modal" onclick="mostrarContenidoModal()"
@@ -198,40 +198,31 @@
         };
 
         const contenido = document.getElementById('contenido');
-        if (opciones[opcionSeleccionada]) {
-            imagenes = opciones[opcionSeleccionada];
-        } else {
-            imagenes = 'Opción no válida';
-        }
+        let imagenes = opciones[opcionSeleccionada] || [];
 
-        var indiceActual = -1;
+        var indiceActual = 0;
 
         function cambiarImagen() {
-            indiceActual++;
-
-            // Ciclo circular
-            if (indiceActual >= imagenes.length) {
+            if (indiceActual < imagenes.length - 1) {
+                indiceActual++;
+            } else {
+                // Última imagen, reiniciar
                 indiceActual = 0;
             }
-
-            // Aplicar transición de fundido
-            document.getElementById("imagenGrande").style.opacity = 0;
-
-            // Cambiar la imagen después de la transición
-            setTimeout(function () {
-                document.getElementById("imagenGrande").src = imagenes[indiceActual];
-                document.getElementById("imagenGrande").style.opacity = 1;
-            }, 500); // 500 milisegundos, igual a la duración de la transición
+            mostrarImagen();
         }
 
         function imagenAnterior() {
-            indiceActual--;
-
-            // Ciclo circular
-            if (indiceActual < 0) {
+            if (indiceActual > 0) {
+                indiceActual--;
+            } else {
+                // Primera imagen, ir a la última
                 indiceActual = imagenes.length - 1;
             }
+            mostrarImagen();
+        }
 
+        function mostrarImagen() {
             // Aplicar transición de fundido
             document.getElementById("imagenGrande").style.opacity = 0;
 
@@ -241,6 +232,7 @@
                 document.getElementById("imagenGrande").style.opacity = 1;
             }, 500); // 500 milisegundos, igual a la duración de la transición
         }
+
         function mostrarContenidoModal() {
             const modalContent = document.getElementById('modalContent');
 
@@ -267,6 +259,11 @@
 
         function irAOtraPagina() {
             window.location.href = "/index.html"; // Cambia "otra_pagina.html" al nombre de tu archivo HTML
+        }
+
+        // Cargar la primera imagen si hay al menos una
+        if (imagenes.length > 0) {
+            mostrarImagen();
         }
     </script>
 
