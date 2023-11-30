@@ -81,13 +81,13 @@
     <div>
         <h5 id= "contadorImagenes">1/1</h5>
         <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()"><i
-                class="bi bi-arrow-left-circle-fill" style="font-size: 2rem;"></i></button>
+                class="bi bi-arrow-left-circle" style="font-size: 2rem;"></i></button>
         <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()"><i
-                class="bi bi-arrow-right-circle-fill" style="font-size: 2rem;"></i></button>
-        <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()"><i class="bi bi-house-door-fill"
+                class="bi bi-arrow-right-circle" style="font-size: 2rem;"></i></button>
+        <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()"><i class="bi bi-arrow-repeat"
                 style="font-size: 2rem;"></i></button>
         <button id="botonModal" class="btn btn-link" data-toggle="modal" onclick="mostrarContenidoModal()"
-            data-target="#miModal"><i class="bi bi-info-circle-fill" style="font-size: 2rem;"></i></button>
+            data-target="#miModal"><i class="bi bi-info-circle" style="font-size: 2rem;"></i></button>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -268,7 +268,8 @@
         }
 
         function irAOtraPagina() {
-            window.location.href = "/index.html"; // Cambia "otra_pagina.html" al nombre de tu archivo HTML
+            indiceActual = 0
+            mostrarImagen();
         }
 
         // Cargar la primera imagen si hay al menos una
