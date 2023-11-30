@@ -36,7 +36,7 @@
         /* Utiliza las clases de Bootstrap para estilizar los botones */
         .btn-link {
             position: absolute;
-            bottom: 10px;
+            bottom: 1px;
             /* Muestra los botones siempre a 10px del borde inferior */
             cursor: pointer;
             transition: bottom 0.5s ease-in-out;
@@ -44,27 +44,27 @@
 
         #botonAnterior {
             left: 30%;
-            padding: 5px 10px;
+            padding: 3px 10px;
         }
 
         #botonDerivar {
             left: 40%;
-            padding: 5px 10px;
+            padding: 3px 10px;
         }
 
         #botonInicio {
             left: 50%;
-            padding: 5px 20px;
+            padding: 3px 20px;
         }
 
         #botonModal {
             left: 60%;
-            padding: 5px 10px;
+            padding: 3px 10px;
         }
 
         #contadorImagenes {
             position: absolute;
-            bottom: 10px;
+            bottom: 12px;
             left: 30px;
             color: rgb(0, 0, 0);
             font-size: 1rem;
@@ -78,15 +78,17 @@
         <img id="imagenGrande" alt="Imagen">
         
     </div>
-    <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()"><i
-            class="bi bi-arrow-left-circle-fill" style="font-size: 2rem;"></i></button>
-    <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()"><i
-            class="bi bi-arrow-right-circle-fill" style="font-size: 2rem;"></i></button>
-    <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()"><i class="bi bi-house-door-fill"
-            style="font-size: 2rem;"></i></button>
-    <button id="botonModal" class="btn btn-link" data-toggle="modal" onclick="mostrarContenidoModal()"
-        data-target="#miModal"><i class="bi bi-info-circle-fill" style="font-size: 2rem;"></i></button>
-        <div id="contadorImagenes">1 / 1</div>
+    <div>
+        <h5 id= "contadorImagenes">1/1</h5>
+        <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()"><i
+                class="bi bi-arrow-left-circle-fill" style="font-size: 2rem;"></i></button>
+        <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()"><i
+                class="bi bi-arrow-right-circle-fill" style="font-size: 2rem;"></i></button>
+        <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()"><i class="bi bi-house-door-fill"
+                style="font-size: 2rem;"></i></button>
+        <button id="botonModal" class="btn btn-link" data-toggle="modal" onclick="mostrarContenidoModal()"
+            data-target="#miModal"><i class="bi bi-info-circle-fill" style="font-size: 2rem;"></i></button>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -130,7 +132,6 @@
                 "imagenes/sso_oauth_12.png",
                 "imagenes/sso_oauth_13.png",
                 "imagenes/sso_oauth_14.png",
-                "imagenes/fin.pdf"
             ],
             sso_saml: ["imagenes/sso_saml_0.png",
                 "imagenes/sso_saml_1.png",
@@ -145,7 +146,6 @@
                 "imagenes/sso_saml_10.png",
                 "imagenes/sso_saml_11.png",
                 "imagenes/sso_saml_12.png",
-                "imagenes/fin.pdf"
             ],
             probar_sftp: ["imagenes/probar_sftp_0.png",
                 "imagenes/probar_sftp_1.png",
@@ -159,7 +159,6 @@
                 "imagenes/probar_sftp_9.png",
                 "imagenes/probar_sftp_10.png",
                 "imagenes/probar_sftp_20.png",
-                "imagenes/fin.pdf"
             ],
 
             centralizacion_sftp: ["imagenes/centra_a_sftp_0.png",
@@ -179,7 +178,6 @@
                 "imagenes/centra_a_sftp_23.png",
                 "imagenes/centra_a_sftp_24.png",
                 "imagenes/centra_a_sftp_25.png",
-                "imagenes/fin.pdf"
             ],
 
             banco_sftp: ["imagenes/banco_a_sftp_0.png",
@@ -202,7 +200,6 @@
                 "imagenes/banco_a_sftp_26.png",
                 "imagenes/banco_a_sftp_27.png",
                 "imagenes/banco_a_sftp_28.png",
-                "imagenes/fin.pdf"
             ],
         };
 
