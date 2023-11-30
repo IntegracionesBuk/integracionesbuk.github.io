@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual</title>
+    <title>Manual Integraciones</title>
     <!-- Agrega la referencia a Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
 
     <style>
         body {
@@ -95,7 +96,10 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tienes dudas?</h5>
+                    <header class="fondo">
+                        <p>Necesitas ayuda?</hp>
+                    </header>
+                    &nbsp;
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -216,6 +220,24 @@
                 "imagenes/banco_a_sftp_28.png",
                 "imagenes/Termino.jpg",
             ],
+            token_api: [
+            "imagenes/Inicio.jpg",
+            "imagenes/creacion_de_token_1.png",
+            "imagenes/creacion_de_token_2.png",
+            "imagenes/creacion_de_token_3.png",
+            "imagenes/creacion_de_token_4.png",
+            "imagenes/creacion_de_token_5.png",
+            "imagenes/creacion_de_token_6.png",
+            "imagenes/creacion_de_token_7.png",
+            "imagenes/creacion_de_token_8.png",
+            "imagenes/creacion_de_token_9.png",
+            "imagenes/creacion_de_token_10.png",
+            "imagenes/creacion_de_token_11.png",
+            "imagenes/creacion_de_token_12.png",
+            "imagenes/creacion_de_token_13.png",
+            "imagenes/Termino.jpg",
+
+            ]
         };
 
         const contenido = document.getElementById('contenido');
@@ -259,28 +281,48 @@
         }
 
         function mostrarContenidoModal() {
-            const modalContent = document.getElementById('modalContent');
+    const modalContent = document.getElementById('modalContent');
 
-            // Limpia el contenido actual del modal
-            modalContent.innerHTML = '';
+    // Limpia el contenido actual del modal
+    modalContent.innerHTML = '';
 
-            // Muestra el contenido según la opción seleccionada
-            if (opcionSeleccionada === 'sso_oauth') {
-                modalContent.innerHTML = 'Contenido específico para sso_oauth';
-            } else if (opcionSeleccionada === 'sso_saml') {
-                modalContent.innerHTML = 'Contenido específico para sso_saml';
-            } else if (opcionSeleccionada === 'probar_sftp') {
-                modalContent.innerHTML = 'Contenido específico para probar_sftp';
-            } else if (opcionSeleccionada === 'centralizacion_sftp') {
-                modalContent.innerHTML = 'Contenido específico para centralizacion_sftp';
-            } else if (opcionSeleccionada === 'banco_sftp') {
-                modalContent.innerHTML = 'Contenido específico para banco_sftp';
-            } else {
-                // Opción no válida
-                modalContent.innerHTML = 'Opción no válida';
-            }
-            $('#miModal').modal('show');
-        }
+    // Define un objeto que asocie opciones con rutas de archivo
+    const rutasArchivos = {
+        'sso_oauth': 'modal/modal_sso_oauth.html',
+        'sso_saml': 'modal/modal_sso_saml.html',
+        'probar_sftp': 'modal/modal_probar_sftp.html',
+        'centralizacion_sftp': 'modal/modal_centralizacion_sftp.html',
+        'banco_sftp': 'modal/modal_banco_sftp.html',
+        'token_api': 'modal/modal_token_api.html',
+    };
+
+    // Obtiene la ruta correspondiente a la opción seleccionada
+    const rutaArchivo = rutasArchivos[opcionSeleccionada];
+
+    if (rutaArchivo) {
+        // Realiza una solicitud fetch al archivo HTML
+        fetch(rutaArchivo)
+            .then(response => response.text())
+            .then(html => {
+                // Actualiza el contenido del modal con el HTML cargado
+                modalContent.innerHTML = html;
+
+                // Muestra el modal
+                $('#miModal').modal('show');
+            })
+            .catch(error => {
+                console.error('Error al cargar el archivo HTML', error);
+                // Maneja el error, por ejemplo, mostrando un mensaje en lugar del contenido
+                modalContent.innerHTML = 'Error al cargar el contenido HTML';
+                $('#miModal').modal('show');
+            });
+    } else {
+        // Opción no válida
+        modalContent.innerHTML = 'Opción no válida';
+        $('#miModal').modal('show');
+    }
+}
+
 
         function irAOtraPagina() {
             indiceActual = 0
