@@ -67,7 +67,7 @@
             position: absolute;
             bottom: 12px;
             left: 30px;
-            color: rgb(0, 0, 0);
+            color: #2E53B3;
             font-size: 1rem;
         }
     </style>
@@ -76,24 +76,26 @@
 <body>
 
     <div id="contenedorImagen">
-        <img id="imagenGrande" alt="Imagen">
-        
+        <img id="imagenGrande" alt="Imagen" src="imagenes/Inicio.jpg">
+
     </div>
+
     <div>
-        <h5 id= "contadorImagenes">1/1</h5>
-        <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()"><i
-                class="bi bi-arrow-left-circle" style="font-size: 2rem;"></i></button>
-        <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()"><i
-                class="bi bi-arrow-right-circle" style="font-size: 2rem;"></i></button>
+        <h5 class="color-titulo text-center" id="contadorImagenes">1/1</h5>
+        <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()"><i class="bi bi-arrow-left-circle"
+                style="font-size: 2rem;"></i></button>
+        <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()"><i class="bi bi-arrow-right-circle"
+                style="font-size: 2rem;"></i></button>
         <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()"><i class="bi bi-arrow-repeat"
                 style="font-size: 2rem;"></i></button>
         <button id="botonModal" class="btn btn-link" data-toggle="modal" onclick="mostrarContenidoModal()"
             data-target="#miModal"><i class="bi bi-info-circle" style="font-size: 2rem;"></i></button>
+        <!-- <button id="botonOK" class="btn btn-primary" style="display: none;">Comencemos</button>-->
     </div>
     <!-- Modal -->
     <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <header class="fondo">
@@ -122,7 +124,6 @@
         // Definir diferentes arreglos según la opción
         const opciones = {
             sso_oauth: [
-                "imagenes/Inicio.jpg",
                 "imagenes/sso_oauth_0.png",
                 "imagenes/sso_oauth_1.png",
                 "imagenes/sso_oauth_2.png",
@@ -141,7 +142,6 @@
                 "imagenes/Termino.jpg",
             ],
             sso_saml: [
-                "imagenes/Inicio.jpg",
                 "imagenes/sso_saml_0.png",
                 "imagenes/sso_saml_1.png",
                 "imagenes/sso_saml_2.png",
@@ -158,7 +158,6 @@
                 "imagenes/Termino.jpg",
             ],
             probar_sftp: [
-                "imagenes/Inicio.jpg",
                 "imagenes/probar_sftp_0.png",
                 "imagenes/probar_sftp_1.png",
                 "imagenes/probar_sftp_2.png",
@@ -175,7 +174,6 @@
             ],
 
             centralizacion_sftp: [
-                "imagenes/Inicio.jpg",
                 "imagenes/centra_a_sftp_0.png",
                 "imagenes/centra_a_sftp_1.png",
                 "imagenes/centra_a_sftp_2.png",
@@ -197,7 +195,6 @@
             ],
 
             banco_sftp: [
-                "imagenes/Inicio.jpg",
                 "imagenes/banco_a_sftp_0.png",
                 "imagenes/banco_a_sftp_1.png",
                 "imagenes/banco_a_sftp_2.png",
@@ -221,21 +218,20 @@
                 "imagenes/Termino.jpg",
             ],
             token_api: [
-            "imagenes/Inicio.jpg",
-            "imagenes/creacion_de_token_1.png",
-            "imagenes/creacion_de_token_2.png",
-            "imagenes/creacion_de_token_3.png",
-            "imagenes/creacion_de_token_4.png",
-            "imagenes/creacion_de_token_5.png",
-            "imagenes/creacion_de_token_6.png",
-            "imagenes/creacion_de_token_7.png",
-            "imagenes/creacion_de_token_8.png",
-            "imagenes/creacion_de_token_9.png",
-            "imagenes/creacion_de_token_10.png",
-            "imagenes/creacion_de_token_11.png",
-            "imagenes/creacion_de_token_12.png",
-            "imagenes/creacion_de_token_13.png",
-            "imagenes/Termino.jpg",
+                "imagenes/creacion_de_token_1.png",
+                "imagenes/creacion_de_token_2.png",
+                "imagenes/creacion_de_token_3.png",
+                "imagenes/creacion_de_token_4.png",
+                "imagenes/creacion_de_token_5.png",
+                "imagenes/creacion_de_token_6.png",
+                "imagenes/creacion_de_token_7.png",
+                "imagenes/creacion_de_token_8.png",
+                "imagenes/creacion_de_token_9.png",
+                "imagenes/creacion_de_token_10.png",
+                "imagenes/creacion_de_token_11.png",
+                "imagenes/creacion_de_token_12.png",
+                "imagenes/creacion_de_token_13.png",
+                "imagenes/Termino.jpg",
 
             ]
         };
@@ -281,47 +277,52 @@
         }
 
         function mostrarContenidoModal() {
-    const modalContent = document.getElementById('modalContent');
+            const modalContent = document.getElementById('modalContent');
 
-    // Limpia el contenido actual del modal
-    modalContent.innerHTML = '';
+            // Limpia el contenido actual del modal
+            modalContent.innerHTML = '';
 
-    // Define un objeto que asocie opciones con rutas de archivo
-    const rutasArchivos = {
-        'sso_oauth': 'modal/modal_sso_oauth.html',
-        'sso_saml': 'modal/modal_sso_saml.html',
-        'probar_sftp': 'modal/modal_probar_sftp.html',
-        'centralizacion_sftp': 'modal/modal_centralizacion_sftp.html',
-        'banco_sftp': 'modal/modal_banco_sftp.html',
-        'token_api': 'modal/modal_token_api.html',
-    };
+            // Define un objeto que asocie opciones con rutas de archivo
+            const rutasArchivos = {
+                'sso_oauth': 'modal/modal_sso_oauth.html',
+                'sso_saml': 'modal/modal_sso_saml.html',
+                'probar_sftp': 'modal/modal_probar_sftp.html',
+                'centralizacion_sftp': 'modal/modal_centralizacion_sftp.html',
+                'banco_sftp': 'modal/modal_banco_sftp.html',
+                'token_api': 'modal/modal_token_api.html',
+            };
 
-    // Obtiene la ruta correspondiente a la opción seleccionada
-    const rutaArchivo = rutasArchivos[opcionSeleccionada];
+            // Obtiene la ruta correspondiente a la opción seleccionada
+            const rutaArchivo = rutasArchivos[opcionSeleccionada];
 
-    if (rutaArchivo) {
-        // Realiza una solicitud fetch al archivo HTML
-        fetch(rutaArchivo)
-            .then(response => response.text())
-            .then(html => {
-                // Actualiza el contenido del modal con el HTML cargado
-                modalContent.innerHTML = html;
+            if (rutaArchivo) {
+                // Realiza una solicitud fetch al archivo HTML
+                fetch(rutaArchivo)
+                    .then(response => response.text())
+                    .then(html => {
+                        // Actualiza el contenido del modal con el HTML cargado
+                        html = html.replace('{indiceActual}', indiceActual + 1);
+                        modalContent.innerHTML = html;
+                        // Oculta todas las filas
+                        $('.pagina-imagen').hide();
 
-                // Muestra el modal
+                        // Muestra solo las filas que corresponden al índice actual
+                        $(`.pagina-imagen:nth-child(${indiceActual + 1})`).show();
+                        // Muestra el modal
+                        $('#miModal').modal('show');
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar el archivo HTML', error);
+                        // Maneja el error, por ejemplo, mostrando un mensaje en lugar del contenido
+                        modalContent.innerHTML = 'Error al cargar el contenido HTML';
+                        $('#miModal').modal('show');
+                    });
+            } else {
+                // Opción no válida
+                modalContent.innerHTML = 'Opción no válida';
                 $('#miModal').modal('show');
-            })
-            .catch(error => {
-                console.error('Error al cargar el archivo HTML', error);
-                // Maneja el error, por ejemplo, mostrando un mensaje en lugar del contenido
-                modalContent.innerHTML = 'Error al cargar el contenido HTML';
-                $('#miModal').modal('show');
-            });
-    } else {
-        // Opción no válida
-        modalContent.innerHTML = 'Opción no válida';
-        $('#miModal').modal('show');
-    }
-}
+            }
+        }
 
 
         function irAOtraPagina() {
@@ -331,8 +332,12 @@
 
         // Cargar la primera imagen si hay al menos una
         if (imagenes.length > 0) {
-            mostrarImagen();
+            setTimeout(function () {
+                // Cargar las imágenes dinámicas después del tiempo de espera
+                mostrarImagen();
+            }, 1000);
         }
+
     </script>
 
     <!-- Agrega la referencia a Bootstrap JS y Popper.js (necesarios para algunas funcionalidades de Bootstrap) -->
