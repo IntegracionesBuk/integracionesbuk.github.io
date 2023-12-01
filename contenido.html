@@ -82,15 +82,15 @@
 
     <div>
         <h5 class="color-titulo text-center" id="contadorImagenes">1/1</h5>
-        <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()"><i class="bi bi-arrow-left-circle"
+        <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()" data-toggle="tooltip" title="Atrás">
+            <i class="bi bi-arrow-left-circle" style="font-size: 2rem;"></i>
+        </button>
+        <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()" data-toggle="tooltip" title="Siguiente"><i class="bi bi-arrow-right-circle"
                 style="font-size: 2rem;"></i></button>
-        <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()"><i class="bi bi-arrow-right-circle"
+        <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()" data-toggle="tooltip" title="Reiniciar"><i class="bi bi-arrow-repeat"
                 style="font-size: 2rem;"></i></button>
-        <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()"><i class="bi bi-arrow-repeat"
-                style="font-size: 2rem;"></i></button>
-        <button id="botonModal" class="btn btn-link" data-toggle="modal" onclick="mostrarContenidoModal()"
+        <button id="botonModal" class="btn btn-link" data-toggle="modal" onclick="mostrarContenidoModal()" data-toggle="tooltip" title="Ayuda"
             data-target="#miModal"><i class="bi bi-info-circle" style="font-size: 2rem;"></i></button>
-        <!-- <button id="botonOK" class="btn btn-primary" style="display: none;">Comencemos</button>-->
     </div>
     <!-- Modal -->
     <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -120,8 +120,22 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const opcionSeleccionada = urlParams.get('option');
-
         // Definir diferentes arreglos según la opción
+        // Agregar event listener para el evento de teclado
+        document.addEventListener('keydown', function (event) {
+            // Verificar si la tecla presionada es la tecla deseada (en este caso, 'Enter' o 'Space')
+            if (event.key === 'ArrowRight') {
+                // Llamar a la función que avanza a la siguiente imagen
+                cambiarImagen();
+            }else if (event.key === 'ArrowLeft'){
+                imagenAnterior();
+            }else if (event.key === 'ArrowUp'){
+                mostrarContenidoModal();
+            }else if (event.key === 'ArrowDown'){
+                $('#miModal').modal('hide');
+            }
+        });
+
         const opciones = {
             sso_oauth: [
                 "imagenes/sso_oauth_0.png",
@@ -234,8 +248,17 @@
         let imagenes = opciones[opcionSeleccionada] || [];
 
         var indiceActual = 0;
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip({
+            animation: true,
+            delay: { "show": 500, "hide": 100 },
+            trigger: "hover",
+            template: '<div class="tooltip bg-primary" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+        });
+    });
 
         function cambiarImagen() {
+            console.log('Cambiar imagen con teclado');
             if (indiceActual < imagenes.length - 1) {
                 indiceActual++;
             } else {
