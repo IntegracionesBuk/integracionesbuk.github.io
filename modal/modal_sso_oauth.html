@@ -1,40 +1,200 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <!-- Agrega la referencia a Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .pagina-imagen {
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container mt-5">
-        
         <h5 class="color-titulo text-center">Configurar SSO OAUTH</h5>
+        <!-- <p>Estás en la página {indiceActual} de la presentación.</p>-->
+
         &nbsp;
 
+        <div class="container">
+            <!-- Primera fila con imagen y descripción -->
+            <div class="row pagina-imagen">
+                <div class="col-md-2">
+                    <img src="img/Engranaje.png" width="40">
+                </div>
+                <div class="col-md-6">
+                    <p class="color-titulo">Debes hacer click para acceder a los ajustes de la plataforma.</p>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-4">
+                    <img src="img/logo_parametros_generales.png" width="40"> Parámetros Generales
+                </div>
+                <div class="col-md-6">
+                    <p class="color-titulo">Aqui encontraremos todas las configuraciones que nos entrga la plataforma.</p>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-4">
+                    <input data-word-filter="" data-target-node=".opciones-administracion"
+                        data-target-text=".info-title" class="form-control" type="search" placeholder="Buscar"
+                        autocomplete="off" disabled>
+                </div>
+                <div class="col-md-6">
+                    <p class="color-titulo">Debes ingresar la palabra Omniauth para encontrar la configuración.</p>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-10">
+                    <ul>
+                        <li class="color-titulo">Despledamos la lista y seleccionamos General.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-2">
+                    <button class="btn btn-primary btn-md" data-modal="true" href="">Guardar</button>
+                </div>
+                <div class="col-md-6">
+                    <p class="color-titulo">Luego de activa la opción, daremos click en el botón guardar.</p>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-2">
+                    <img src="img/Engranaje.png" width="40">
+                </div>
+                <div class="col-md-6">
+                    <p class="color-titulo">Debes hacer click para acceder a los ajustes de la plataforma.</p>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-4">
+                    <input data-word-filter="" data-target-node=".opciones-administracion"
+                        data-target-text=".info-title" class="form-control" type="search" placeholder="Buscar"
+                        autocomplete="off" disabled>
+                </div>
+                <div class="col-md-6">
+                    <p class="color-titulo">Debes ingresar la Integraciones para encontrar la configuración correcta.</p>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-10">
+                    <ul>
+                        <li class="color-titulo">Seleccionamos la configuración Integraciones</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-10">
+                    <ul>
+                        <li class="color-titulo">Aquí encontraremos diferentes integraciones, pero en este caso debemos seleccionar Single Sign On</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <table class="table table-hover">
+                        <tr>
+                            <td class="color-titulo">Habilitar link SSO</td>
+                            <td class="color-titulo">?</td>
+                        </tr>
+                        <tr>
+                            <td class="color-titulo">Nombre Link SSO</td>
+                            <td class="color-titulo">?</td>
+                        </tr>
+                        <tr>
+                            <td class="color-titulo">Google OAuth</td>
+                            <td class="color-titulo">?</td>
+                        </tr>
+                        <tr>
+                            <td class="color-titulo">Office365 OAuth</td>
+                            <td class="color-titulo">?</td>
+                        </tr>
+                </table><br>
+                <h5 class="color-titulo text-center"> Custom OAuth</h5>
+                <table class="table table-hover">
+                    <tr>
+                        <td class="color-titulo">Estrategia OAuth personalizada</td>
+                        <td class="color-titulo">?</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">Dominios a autenticar</td>
+                        <td class="color-titulo">?</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">client_id</td>
+                        <td class="color-titulo">?</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">client_secret</td>
+                        <td class="color-titulo">?</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">authorize_url</td>
+                        <td class="color-titulo">?</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">token_url</td>
+                        <td class="color-titulo">?</td>
+                    </tr>
 
-
-
-
-
-
-
-
-        <footer class="bg-light text-center py-3 mt-5 d-flex justify-content-center">
-            <img src="img/buk_trabajo_feliz.png" alt="Footer Image" height="70"></img>
-        </footer>
+                    <tr>
+                        <td class="color-titulo">userinfo_endpoint</td>
+                        <td class="color-titulo">?</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">tenant_id (Opcional)</td>
+                        <td class="color-titulo">?</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">logout_url</td>
+                        <td class="color-titulo">?</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">Enviar Email completo a Login</td>
+                        <td class="color-titulo">?</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-2">
+                    <button class="btn btn-primary btn-md" data-modal="true" href="">Guardar</button>
+                </div>
+                <div class="col-md-6">
+                    <p class="color-titulo">Luego de configurar cada uno de los campos solicitados, daremos click en el botón guardar.</p>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-10">
+                    <ul>
+                        <li class="color-titulo">Ya podemos ver en la parte superior el mensaje de éxito!</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-7">
+                    <p class="color-titulo">Si aún te encuentras con dudas, puedes escribirnos en nuestro canal de slack o también puedes revisar nuestra documentación</p>
+                </div>
+                <div class="col-md-2">
+                 <a href="https://drive.google.com/drive/folders/1hrm2aauHQuzvFKk85kxDhfVK_Blg5DS9?usp=drive_link" target="_blank"><img src="img/logo_drive.png" width="80" height="70">
+                 </a>
+                </div>
+                <div class="col-md-">
+                 <a href="https://bukhr.slack.com/archives/C02CDULLYN9" target="_blank"><img src="img/logo_slack.png" width="100" height="70">
+                 </a>
+                </div>
+               
+            </div>
+            <footer class="bg-light text-center py-3 mt-5 d-flex justify-content-center">
+                <img src="img/integraciones_by_buk.png" alt="Footer Image" height="100" class="mx-3"></img>
+            </footer>
+        </div>
     </div>
-    <!-- Footer -->
-   
-    <!-- Agrega la referencia a Bootstrap JS y Popper.js (necesarios para algunas funcionalidades de Bootstrap) -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script>
-        
-    </script>
+
+
 </body>
+
 </html>
