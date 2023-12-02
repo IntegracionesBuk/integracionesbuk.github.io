@@ -82,16 +82,15 @@
 
     <div>
         <h5 class="color-titulo text-center" id="contadorImagenes">1/1</h5>
-        <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()" data-toggle="tooltip" title="Atrás">
+        <button id="botonAnterior" class="btn btn-link" onclick="imagenAnterior()">
             <i class="bi bi-arrow-left-circle" style="font-size: 2rem;"></i>
         </button>
-        <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()" data-toggle="tooltip"
-            title="Siguiente"><i class="bi bi-arrow-right-circle" style="font-size: 2rem;"></i></button>
-        <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()" data-toggle="tooltip"
-            title="Reiniciar"><i class="bi bi-arrow-repeat" style="font-size: 2rem;"></i></button>
-        <button id="botonModal" class="btn btn-link" data-toggle="modal" onclick="mostrarContenidoModal()"
-            data-toggle="tooltip" title="Ayuda" data-target="#miModal"><i class="bi bi-info-circle"
+        <button id="botonDerivar" class="btn btn-link" onclick="cambiarImagen()"><i class="bi bi-arrow-right-circle"
                 style="font-size: 2rem;"></i></button>
+        <button id="botonInicio" class="btn btn-link" onclick="irAOtraPagina()"><i class="bi bi-arrow-repeat"
+                style="font-size: 2rem;"></i></button>
+        <button id="botonModal" class="btn btn-link" data-toggle="modal" onclick="mostrarContenidoModal()"
+            data-target="#miModal"><i class="bi bi-info-circle" style="font-size: 2rem;"></i></button>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -103,7 +102,7 @@
                         <p>Necesitas ayuda?</hp>
                     </header>
                     &nbsp;
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" onclick="cerrarModal()" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -112,30 +111,46 @@
                     <div id="modalContent"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cerrarModal()">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
-
+    <!-- SCRIPT -->
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const opcionSeleccionada = urlParams.get('option');
-        // Definir diferentes arreglos según la opción
-        // Agregar event listener para el evento de teclado
+        let modalAbierto = false;
+
+        // Event listener para el evento de teclado
         document.addEventListener('keydown', function (event) {
-            // Verificar si la tecla presionada es la tecla deseada (en este caso, 'Enter' o 'Space')
+            // Verificar si la tecla presionada es la tecla deseada
             if (event.key === 'ArrowRight') {
-                // Llamar a la función que avanza a la siguiente imagen
-                cambiarImagen();
+                // Verificar si el modal está cerrado antes de cambiar la imagen
+                if (!modalAbierto) {
+                    cambiarImagen();
+                }
             } else if (event.key === 'ArrowLeft') {
-                imagenAnterior();
+                if (!modalAbierto) {
+                    imagenAnterior();
+                }
             } else if (event.key === 'ArrowUp') {
-                mostrarContenidoModal();
+                if (!modalAbierto) {
+                    mostrarContenidoModal();
+                } else {
+                    ""
+                }
             } else if (event.key === 'ArrowDown') {
-                $('#miModal').modal('hide');
+                // Verificar si el modal está abierto antes de intentar cerrarlo
+                cerrarModal();
             }
         });
+        function cerrarModal() {
+            if ($('#miModal').hasClass('show')) {
+                $('#miModal').modal('hide');
+                modalAbierto = false;
+            }
+        }
 
         const opciones = {
             sso_oauth: [
@@ -204,26 +219,23 @@
             ],
 
             banco_sftp: [
-                "imagenes/banco_a_sftp_0.png",
                 "imagenes/banco_a_sftp_1.png",
                 "imagenes/banco_a_sftp_2.png",
                 "imagenes/banco_a_sftp_3.png",
                 "imagenes/banco_a_sftp_4.png",
                 "imagenes/banco_a_sftp_5.png",
                 "imagenes/banco_a_sftp_6.png",
-                "imagenes/banco_a_sftp_7.png",
                 "imagenes/banco_a_sftp_8.png",
                 "imagenes/banco_a_sftp_9.png",
                 "imagenes/banco_a_sftp_10.png",
-                "imagenes/banco_a_sftp_20.png",
-                "imagenes/banco_a_sftp_21.png",
-                "imagenes/banco_a_sftp_22.png",
-                "imagenes/banco_a_sftp_23.png",
-                "imagenes/banco_a_sftp_24.png",
-                "imagenes/banco_a_sftp_25.png",
-                "imagenes/banco_a_sftp_26.png",
-                "imagenes/banco_a_sftp_27.png",
-                "imagenes/banco_a_sftp_28.png",
+                "imagenes/banco_a_sftp_11.png",
+                "imagenes/banco_a_sftp_12.png",
+                "imagenes/banco_a_sftp_13.png",
+                "imagenes/banco_a_sftp_14.png",
+                "imagenes/banco_a_sftp_15.png",
+                "imagenes/banco_a_sftp_16.png",
+                "imagenes/banco_a_sftp_17.png",
+                "imagenes/banco_a_sftp_18.png",
                 "imagenes/Termino.jpg",
             ],
             token_api: [
@@ -266,14 +278,6 @@
         let imagenes = opciones[opcionSeleccionada] || [];
 
         var indiceActual = 0;
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip({
-                animation: true,
-                delay: { "show": 500, "hide": 100 },
-                trigger: "hover",
-                template: '<div class="tooltip bg-primary" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
-            });
-        });
 
         function cambiarImagen() {
             console.log('Cambiar imagen con teclado');
@@ -352,6 +356,7 @@
                         modalContent.innerHTML = 'Error al cargar el contenido HTML';
                         $('#miModal').modal('show');
                     });
+                modalAbierto = true;
             } else {
                 // Opción no válida
                 modalContent.innerHTML = 'Opción no válida';
