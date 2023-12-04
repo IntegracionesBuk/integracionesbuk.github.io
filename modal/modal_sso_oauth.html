@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
     <style>
         .pagina-imagen {
             margin-top: 20px;
@@ -97,67 +95,107 @@
             </div>
             <div class="row pagina-imagen">
                 <table class="table table-hover">
-                        <tr>
-                            <td class="color-titulo">Habilitar link SSO</td>
-                            <td class="color-titulo">?</td>
-                        </tr>
-                        <tr>
-                            <td class="color-titulo">Nombre Link SSO</td>
-                            <td class="color-titulo">?</td>
-                        </tr>
-                        <tr>
-                            <td class="color-titulo">Google OAuth</td>
-                            <td class="color-titulo">?</td>
-                        </tr>
-                        <tr>
-                            <td class="color-titulo">Office365 OAuth</td>
-                            <td class="color-titulo">?</td>
-                        </tr>
-                </table><br>
-                <h5 class="color-titulo text-center"> Custom OAuth</h5>
-                <table class="table table-hover">
                     <tr>
-                        <td class="color-titulo">Estrategia OAuth personalizada</td>
-                        <td class="color-titulo">?</td>
+                        <td class="color-titulo"><strong>Habilitar link SSO</strong></td>
+                        <td class="color-titulo">Habilita un link directo al acceso corporativo</td>
                     </tr>
                     <tr>
-                        <td class="color-titulo">Dominios a autenticar</td>
-                        <td class="color-titulo">?</td>
-                    </tr>
-                    <tr>
-                        <td class="color-titulo">client_id</td>
-                        <td class="color-titulo">?</td>
-                    </tr>
-                    <tr>
-                        <td class="color-titulo">client_secret</td>
-                        <td class="color-titulo">?</td>
-                    </tr>
-                    <tr>
-                        <td class="color-titulo">authorize_url</td>
-                        <td class="color-titulo">?</td>
-                    </tr>
-                    <tr>
-                        <td class="color-titulo">token_url</td>
-                        <td class="color-titulo">?</td>
-                    </tr>
-
-                    <tr>
-                        <td class="color-titulo">userinfo_endpoint</td>
-                        <td class="color-titulo">?</td>
-                    </tr>
-                    <tr>
-                        <td class="color-titulo">tenant_id (Opcional)</td>
-                        <td class="color-titulo">?</td>
-                    </tr>
-                    <tr>
-                        <td class="color-titulo">logout_url</td>
-                        <td class="color-titulo">?</td>
-                    </tr>
-                    <tr>
-                        <td class="color-titulo">Enviar Email completo a Login</td>
-                        <td class="color-titulo">?</td>
+                        <td class="color-titulo"><strong>Nombre Link SSO</strong></td>
+                        <td class="color-titulo">Nombre que tendrá el link directo.</td>
                     </tr>
                 </table>
+                 <br><p class="color-titulo text-center">Tenemos 3 formar de realizar la autenticación con Oauth. Debes seleccionar una forma de autenticarte</p>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <p class="color-titulo text-center"><strong>Autenticación con Google</strong></p>
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                                    <strong>Google OAuth</strong>
+                                    <p class="color-titulo"> Se ingresan el o los dominios a autenticar en la configuración bajo
+                                        Autenticación de Google.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <p class="color-titulo text-center"><strong>Autenticación con Office365</strong></p>
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Office365 OAuth</strong>
+                            <p class="color-titulo"> Se ingresan el o los dominios a autenticar en la configuración bajo
+                                Autenticación de Office365.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <p class="color-titulo text-center"><strong>Autenticación personalizada</strong></p>
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <table class="table table-hover">
+                                <tr>
+                                    <td class="color-titulo">Estrategia OAuth personalizada</td>
+                                    <td class="color-titulo">Nombre de la estrategia personalizada</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-titulo">Dominios a autenticar</td>
+                                    <td class="color-titulo">Dominios de correo electrónico que se utilicen en este método de
+                                        autenticación, si es más de uno, separar con punto y coma (;)</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-titulo">client_id</td>
+                                    <td class="color-titulo">Identificador de buk según el proveedor de autenticación. Solicitar a
+                                        administrador.</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-titulo">client_secret</td>
+                                    <td class="color-titulo">Cliente secreto que se utilizará para autenticar la aplicación de buk
+                                        en el servidor de OAuth.</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-titulo">authorize_url</td>
+                                    <td class="color-titulo">Dirección URL donde se realizarán las solicitudes de autenticación.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="color-titulo">token_url</td>
+                                    <td class="color-titulo">Dirección URL donde se solicitarán los token para las sesiones de
+                                        autenticación.</td>
+                                </tr>
+            
+                                <tr>
+                                    <td class="color-titulo">userinfo_endpoint</td>
+                                    <td class="color-titulo">Dirección URL donde se obtiene la información del usuario logeado.</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-titulo">tenant_id (Opcional)</td>
+                                    <td class="color-titulo">Código de grupos de usuarios que se pueden usar para autentificar.</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-titulo">logout_url</td>
+                                    <td class="color-titulo">Dirección URL donde se redirigirá al usuario para cerrar su sesión
+                                        tanto en buk como en la plataforma personalizada.</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-titulo">Enviar Email completo a Login</td>
+                                    <td class="color-titulo">Envío de email con el dominio a la pantalla del login del proveedor de
+                                        atenticación</td>
+                                </tr>
+                            </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
             <div class="row pagina-imagen">
                 <div class="col-md-2">
@@ -193,8 +231,6 @@
             </footer>
         </div>
     </div>
-
-
 </body>
 
 </html>
