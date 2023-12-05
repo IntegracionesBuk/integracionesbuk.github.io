@@ -1,9 +1,9 @@
 [
-    {"tipo": "SFTP", "nombre": "Envio de Centralización por SFTP", "fecha": "01-12-2023", "descripcion": "Verificar la configuración del SFTP para el envío del archivo centralización", "enlace": "contenido.html?option=centralizacion_sftp"},
-    {"tipo": "SFTP", "nombre": "Envio de Banco por SFTP", "fecha": "01-12-2023", "descripcion": "Verificar la configuración del SFTP para el envío del archivo banco", "enlace": "contenido.html?option=banco_sftp"},
-    {"tipo": "SFTP", "nombre": "Probar envío SFTP", "fecha": "05-12-2023", "descripcion": "Veremos el paso a paso para probar el envío del archivo banco o centralización al SFTP de BUK", "enlace": "contenido.html?option=probar_sftp"},
+    {"tipo": "SFTP", "nombre": "Envío de Centralización por SFTP", "fecha": "01-12-2023", "descripcion": "Verificar la configuración del SFTP para el envío del archivo centralización", "enlace": "contenido.html?option=centralizacion_sftp"},
+    {"tipo": "SFTP", "nombre": "Envío de Banco por SFTP", "fecha": "01-12-2023", "descripcion": "Verificar la configuración del SFTP para el envío del archivo banco", "enlace": "contenido.html?option=banco_sftp"},
+    {"tipo": "SFTP", "nombre": "Validar el envío a SFTP", "fecha": "05-12-2023", "descripcion": "Veremos el paso a paso para probar el envío del archivo banco o centralización al SFTP de BUK", "enlace": "contenido.html?option=probar_sftp"},
     {"tipo": "SSO", "nombre": "Configurar SSO OAUTH", "fecha": "01-12-2023", "descripcion": "Veremos como configurar el SSO - Protocolo OAUTH", "enlace": "contenido.html?option=sso_oauth"},
     {"tipo": "SSO", "nombre": "Configurar SSO SAML", "fecha": "05-12-2023", "descripcion": "Veremos como configurar el SSO - Protocolo SAML", "enlace": "contenido.html?option=sso_saml"},
-    {"tipo": "API", "nombre": "Creación de token y conexión", "fecha": "01-12-2023", "descripcion": "Veremos como configurar el token para poder conectarnos en apidocs", "enlace": "contenido.html?option=token_api"}
+    {"tipo": "API", "nombre": "Creación de token y conexión API", "fecha": "01-12-2023", "descripcion": "Veremos como configurar el token (llave) desde BUK para poder conectarnos en apidocs", "enlace": "contenido.html?option=token_api"}
   ]
   
