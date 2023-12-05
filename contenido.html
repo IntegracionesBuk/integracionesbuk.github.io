@@ -12,12 +12,6 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
         #contenedorImagen {
             position: relative;
             width: 100vw;
@@ -62,14 +56,6 @@
         #botonModal {
             left: 60%;
             padding: 3px 10px;
-        }
-
-        #contadorImagenes {
-            position: absolute;
-            bottom: 12px;
-            left: 30px;
-            color: #2E53B3;
-            font-size: 1rem;
         }
     </style>
 </head>
@@ -309,7 +295,7 @@
                 // Actualizar el contador de imágenes
                 const contador = document.getElementById("contadorImagenes");
                 contador.textContent = `${indiceActual + 1} / ${imagenes.length}`;
-            }, 500); // 500 milisegundos, igual a la duración de la transición
+            }, 300); // 300 milisegundos, igual a la duración de la transición
         }
 
         function mostrarContenidoModal() {
