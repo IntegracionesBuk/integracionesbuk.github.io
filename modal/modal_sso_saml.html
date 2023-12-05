@@ -1,40 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <!-- Agrega la referencia a Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        .pagina-imagen {
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container mt-5">
-        
         <h5 class="color-titulo text-center">Configurar SSO SAML</h5>
+        <!-- <p>Estás en la página {indiceActual} de la presentación.</p>-->
+
         &nbsp;
 
+        <div class="container">
+            <!-- Primera fila con imagen y descripción -->
+            <div class="row pagina-imagen">
+                <div class="col-md-2">
+                    <img src="img/Engranaje.png" width="40">
+                </div>
+                <div class="col-md-6">
+                    <p class="color-titulo">Debes hacer click para acceder a los ajustes de la plataforma.</p>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-4">
+                    <img src="img/logo_parametros_generales.png" width="40"> Parámetros Generales
+                </div>
+                <div class="col-md-6">
+                    <p class="color-titulo">Aqui encontraremos todas las configuraciones que nos entrga la plataforma.
+                    </p>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <div class="col-md-4">
+                    <input data-word-filter="" data-target-node=".opciones-administracion"
+                        data-target-text=".info-title" class="form-control" type="search" placeholder="Buscar"
+                        autocomplete="off" disabled>
+                </div>
+                <div class="col-md-6">
+                    <p class="color-titulo">Debes ingresar la palabra <strong>Saml</strong> para encontrar la
+                        configuración.</p>
+                </div>
+            </div>
+            <div class="row pagina-imagen">
+                <table class="table table-hover">
+                    <tr>
+                        <td class="color-titulo">Habilitar SAML</td>
+                        <td class="color-titulo">Activa el servicio de autenticación SAML</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">Dominios a autenticar vía SAML</td>
+                        <td class="color-titulo">Correos que cuenten con el dominio definido en estos parámetros serán consultados por Buk al proveedor de autenticación.</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">Issuer/Audience URL (opcional)</td>
+                        <td class="color-titulo">Es un campo de texto libre personalizado. Suelen ser similares a contraseñas o URL’s.</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">Authentication Context (opcional)</td>
+                        <td class="color-titulo">Método extra de autenticación de SAML.</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">URL del IdP para SSO</td>
+                        <td class="color-titulo">Esta URL es la que Buk utilizará para ir a consultar hacía el proveedor de autenticación del cliente sobre la existencia del usuario.</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">URL del IdP para SLO</td>
+                        <td class="color-titulo">Se utiliza solo para que cuando el usuario cierre sesión en BUK, se le cierre además la sesión en el proveedor SAML.</td>
+                    </tr>
 
-
-
-
-
-
-
-
-        <footer class="bg-light text-center py-3 mt-5 d-flex justify-content-center">
-            <img src="img/buk_trabajo_feliz.png" alt="Footer Image" height="70"></img>
-        </footer>
+                    <tr>
+                        <td class="color-titulo">Certificado de IdP</td>
+                        <td class="color-titulo">Es la información con la cual el proveedor de autenticación puede validar que la transacción es válida.</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">Hash del certificado de IdP</td>
+                        <td class="color-titulo">huella digital del certificado del proveedor de identidad. No es necesario si se tiene el certificado IdP.</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">Url Idp Logout forzada</td>
+                        <td class="color-titulo">URL de destino para SIngle Log Out del proveedor de identidad. Dejar vacío permite que solo se cierre sesión en buk.</td>
+                    </tr>
+                    <tr>
+                        <td class="color-titulo">Algoritmo del hash del certificado</td>
+                        <td class="color-titulo">Algoritmo para el hash de certificado, generalmente es utilizado el sha256</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
-    <!-- Footer -->
-   
-    <!-- Agrega la referencia a Bootstrap JS y Popper.js (necesarios para algunas funcionalidades de Bootstrap) -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script>
-        
-    </script>
+    <div class="row pagina-imagen">
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-md" data-modal="true" href="">Guardar</button>
+        </div>
+        <div class="col-md-6">
+            <p class="color-titulo">Luego de configurar cada uno de los campos solicitados, daremos click en el botón
+                guardar.</p>
+        </div>
+    </div>
+    <div class="row pagina-imagen">
+        <div class="col-md-10">
+            <ul>
+                <li class="color-titulo">Ya podemos ver en la parte superior el mensaje de éxito!</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row pagina-imagen">
+        <div class="col-md-7">
+            <p class="color-titulo">Si aún te encuentras con dudas, puedes escribirnos en nuestro canal de slack o
+                también puedes revisar nuestra documentación</p>
+        </div>
+        <div class="col-md-2">
+            <a href="https://drive.google.com/drive/folders/1hrm2aauHQuzvFKk85kxDhfVK_Blg5DS9?usp=drive_link"
+                target="_blank"><img src="img/logo_drive.png" width="80" height="70">
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="https://bukhr.slack.com/archives/C02CDULLYN9" target="_blank"><img src="img/logo_slack.png"
+                    width="100" height="70">
+            </a>
+        </div>
+
+    </div>
+    <footer class="bg-light text-center py-3 mt-5 d-flex justify-content-center">
+        <img src="img/integraciones_by_buk.png" alt="Footer Image" height="100" class="mx-3"></img>
+    </footer>
+    </div>
+    </div>
 </body>
+
 </html>
