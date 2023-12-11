@@ -5,5 +5,5 @@
     {"tipo": "SSO", "nombre": "Configurar SSO OAUTH", "fecha": "01-12-2023", "descripcion": "Veremos como configurar el SSO - Protocolo OAUTH", "enlace": "contenido.html?option=sso_oauth"},
     {"tipo": "SSO", "nombre": "Configurar SSO SAML", "fecha": "05-12-2023", "descripcion": "Veremos como configurar el SSO - Protocolo SAML", "enlace": "contenido.html?option=sso_saml"},
     {"tipo": "API", "nombre": "Creación de token y conexión API", "fecha": "01-12-2023", "descripcion": "Veremos como configurar el token (llave) desde BUK para poder conectarnos en apidocs", "enlace": "contenido.html?option=token_api"},
-    {"tipo": "API", "nombre": "Utilizar API desde postman", "fecha": "07-12-2023", "descripcion": "Veremos como realizar la misma consulta de apidocs en una herramienta externa de BUK (postman)", "enlace": "contenido.html?option=api_postman"}
+    {"tipo": "API", "nombre": "Utilizar API desde Postman", "fecha": "07-12-2023", "descripcion": "Veremos como realizar la misma consulta de apidocs en una herramienta externa de BUK (Postman)", "enlace": "contenido.html?option=api_postman"}
   ]
