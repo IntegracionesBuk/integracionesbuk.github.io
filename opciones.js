@@ -135,5 +135,6 @@ window.opciones = {
         "imagenes/webhook_conf_pruebas_16.png",
         "imagenes/webhook_conf_pruebas_17.png",
         "imagenes/webhook_conf_pruebas_18.png",
+        "imagenes/Termino.png",
     ]
 };

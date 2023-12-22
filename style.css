@@ -47,14 +47,58 @@ body .color-titulo {
   width: 100vw;
   height: 95vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Ajusta esta línea para alinear en la parte superior */
   justify-content: center;
   overflow: hidden;
 }
 
 #imagenGrande {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 85%;
+  max-height: 85%;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
+
+#contenedorPrincipal {
+  display: flex;
+  align-items: center;
+  flex-direction: row; /* Ajusta para que los elementos estén en fila en lugar de columna */
+  width: 100%; /* Ajusta el ancho según tus necesidades */
+}
+
+#logo {
+  max-width: 100px; /* Ajusta el tamaño del logotipo según tus necesidades */
+  top: 15px;
+  right: -10px;
+  position: relative;
+}
+#logoPersona,
+#logoEdificio {
+  position: fixed;
+  top: 15px; /* Ajusta según sea necesario */
+  right: 20px; /* Ajusta según sea necesario */
+}
+
+/* Aplica estilos fijos a las cabeceras de columna */
+table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f8f9fa; /* Color de fondo para destacar las cabeceras */
+  z-index: 1; /* Asegura que las cabeceras estén por encima del contenido de la tabla */
+}
+
+/* Otras reglas de estilo para la tabla si es necesario */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table tbody td:nth-child(3) {
+  white-space: nowrap;
+}
+
+/* Establece la propiedad white-space para las cabeceras de columna */
+table thead th {
+  white-space: nowrap;
+}
+

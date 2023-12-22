@@ -13,7 +13,7 @@
 
 <body>
     <header class="text-center">
-        <img src="img/buk-integraciones.png" class="img-fluid" alt="" style="height: 250px;">
+        <img src="img/buk-integraciones.png" class="img-fluid" alt="" style="height: 200px;">
     </header>
     <div class="container mt-5">
         <header class="fondo">
@@ -34,7 +34,8 @@
             </div>
             <div class="col-md-4"> <!-- Columna para el input y el botón -->
                 <div class="input-group">
-                    <input type="text" id="filtro" class="form-control" placeholder="fecha, tipo, nombre o descripción &#128269;">
+                    <input type="text" id="filtro" class="form-control"
+                        placeholder="fecha, tipo, nombre o descripción &#128269;">
                 </div>
             </div>
         </div>
@@ -44,9 +45,10 @@
                 <tr>
                     <th class="color-titulo">Tipo</th>
                     <th class="color-titulo">Nombre</th>
-                    <th class="color-titulo">Fecha actualización</th>
+                    <th class="color-titulo">Fecha Actualización</th>
                     <th class="color-titulo">Descripción</th>
-                    <th class="color-titulo">Acción</th>
+                    <th class="color-titulo">Interno</th>
+                    <th class="color-titulo">Cliente</th>
                 </tr>
             </thead>
             <tbody id="tablaContenido">
@@ -63,32 +65,89 @@
     <div class="floating-icon" data-toggle="modal" data-target="#miModal">
         <i class="bi bi-info-circle" style="font-size: 2rem;"></i>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Título del Modal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Contenido del Modal
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <!-- Puedes agregar más botones según tus necesidades -->
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- Footer -->
     <footer class="bg-light text-center py-3 mt-5 d-flex justify-content-center">
         <img src="img/buk_trabajo_feliz.png" alt="Logo" height="90" class="mx-3">
         <img src="img/integraciones_by_buk.png" alt="Footer Image" height="100" class="mx-3"></img>
     </footer>
+    <!-- Modal -->
+
+    <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <header class="fondo">
+                        <p>Manual Interactivo Integraciones</p>
+                    </header>
+                    &nbsp;
+                    <button type="button" class="close" data-dismiss="modal" onclick="cerrarModal()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Contenido del modal según la opción seleccionada -->
+                    <p class="color-titulo"> Esta pagina principal es de uso interno. Esto es con la finalidad de poder
+                        centralizar nuestros manuales, tener una forma mas rapida y facil de acceder a ellos</p>
+                    <p class="color-titulo"> <strong> Destacar que no debemos compartir esta pagina inicial, si no que
+                            solamente los link directos a los manuales.</strong></p>
+                    <table class="table table-hover">
+                        <tr>
+                            <td class="color-titulo"><strong>Manuales Activos</strong></td>
+                            <td class="color-titulo">Es un contador con la cantidad de manuales que se encuentran en la
+                                pagina.</td>
+                        </tr>
+                        <tr>
+                            <td class="color-titulo"><strong>Filtros</strong></td>
+                            <td class="color-titulo">Puedes filtrar por cualquier palabra.</td>
+                        </tr>
+                        <tr>
+                            <td class="color-titulo"><strong>Tipo</strong></td>
+                            <td class="color-titulo">Corresponde al tipo de manual ejemplo, si es API, SFTP, SSO,
+                                centralización, Bonos, Variables, etc todo lo que sea relacionado a nuestra área</td>
+                        </tr>
+                        <tr>
+                            <td class="color-titulo"><strong>Nombre</strong></td>
+                            <td class="color-titulo">Un nombre breve del manual</td>
+                        </tr>
+                        <tr>
+                            <td class="color-titulo"><strong>Fecha Actualización</strong></td>
+                            <td class="color-titulo">Muestra la fecha de la última modificación realizada al manual</td>
+                        </tr>
+                        <tr>
+                            <td class="color-titulo"><strong>Descripción</strong></td>
+                            <td class="color-titulo">Una breve descripción de lo que trata el manual</td>
+                        </tr>
+                        <tr>
+                            <td class="color-titulo"><strong>Interno</strong></td>
+                            <td class="color-titulo">Encontraras el link para compartir el manual con nuestro cliente
+                                interno</td>
+                        </tr>
+                        <tr>
+                            <td class="color-titulo"><strong>Cliente</strong></td>
+                            <td class="color-titulo">Encontraras el link para compartir el manual con un cliente
+                                externo. La diferencia por el momento, se debe a la eliminación de la última hoja del
+                                manual donde sale el acceso a nuestro drive y canal de slack</td>
+                        </tr>
+                        <tr>
+                            <td class="color-titulo"><strong>Paginación</strong></td>
+                            <td class="color-titulo">Cuenta con una paginación donde mostrara 3 manuales por paginas.
+                            </td>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </table>
+                    <br>
+                    <p class="color-titulo"> Ante cualquier duda, consulta o feedback acercarse al equipo de Management</p>
+                </div>
+                <footer class="bg-light text-center py-3 mt-5 d-flex justify-content-center">
+                    <img src="img/integraciones_by_buk.png" alt="Footer Image" height="100" class="mx-3"></img>
+                </footer>
+            </div>
+        </div>
+    </div>
+
     <!-- Agrega la referencia a Bootstrap JS y Popper.js (necesarios para algunas funcionalidades de Bootstrap) -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -143,7 +202,8 @@
             <td class="color-titulo">${item.nombre}</td>
             <td class="color-titulo">${item.fecha}</td>
             <td class="color-titulo">${item.descripcion}</td>
-            <td class="color-titulo"><a href="${item.enlace}" class="btn btn-link" target="_blank"><i class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></a></td>
+            <td class="color-titulo"><a href="${item.enlace}" class="btn btn-link" target="_blank"><i class="bi bi-building" style="font-size: 2rem"></i></a></td>
+            <td class="color-titulo"><a href="${item.enlace_cliente}" class="btn btn-link" target="_blank"><i class="bi bi-person-check-fill" style="font-size: 2rem";></i></a></td>
           `;
                 tablaContenido.appendChild(fila);
             });
