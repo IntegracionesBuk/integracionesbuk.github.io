@@ -43,20 +43,20 @@ body .color-titulo {
   font-size: 1.3rem;
 }
 #contenedorImagen {
-  position: relative;
-  width: 100vw;
-  height: 95vh;
-  display: flex;
-  align-items: flex-start; /* Ajusta esta línea para alinear en la parte superior */
-  justify-content: center;
-  overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    align-items: center; /* Ajusta para centrar verticalmente */
+    justify-content: center;
+    overflow: hidden;
 }
 
 #imagenGrande {
-  max-width: 85%;
-  max-height: 85%;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+    max-width: 85%;
+    max-height: 75vh; /* Ajusta según sea necesario */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
 #contenedorPrincipal {
@@ -101,4 +101,17 @@ table tbody td:nth-child(3) {
 table thead th {
   white-space: nowrap;
 }
+
+#miModal {
+  position: fixed;
+  top: 55%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  z-index: 1050; /* Ajusta según sea necesario */
+}
+
+#miModal .modal-dialog {
+  margin: 0;
+}
+
 

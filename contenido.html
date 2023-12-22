@@ -171,17 +171,14 @@
         var contador = 1
 
         function cambiarImagen() {
-            console.log("ANTES cambiar imagen cliente " + indiceActual);
             manual_cliente = urlParams.get('cliente');
             if (contador == imagenes.length - 1 && manual_cliente == "si") {
                 indiceActual = -1;
                 contador = 0;
-                console.log("cambiar imagen cliente " + indiceActual);
             }
             if (indiceActual < imagenes.length - 1) {
                 indiceActual++;
                 contador++;
-                console.log("cambiar imagen " + indiceActual);
             } else {
                 // Última imagen, reiniciar
                 indiceActual = 0;
@@ -196,7 +193,6 @@
                 contador--;
             }
             mostrarImagen();
-            console.log("imagen anterior " + indiceActual);
         }
 
         function mostrarImagen() {
