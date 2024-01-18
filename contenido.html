@@ -67,9 +67,7 @@
             <p class="color-titulo"><i class="bi bi-building" style="font-size: 2rem;"></i></p>
         </div>
     </div>
-
-
-
+    <h5 class="color-titulo text-center" id="mensajeInterno">Este manual es de uso Interno BUK, no compartir con cliente</h5>
     <div id="contenedorImagen">
         <img id="imagenGrande" alt="Imagen" src="imagenes/Inicio.png">
     </div>
@@ -290,9 +288,11 @@
         if (manual_cliente === 'si') {
             logoPersona.style.display = 'block'; // Muestra el logo de persona
             logoEdificio.style.display = 'none'; // Oculta el logo de edificio
+            mensajeInterno.style.display='none'
         } else {
             logoPersona.style.display = 'none'; // Oculta el logo de persona
             logoEdificio.style.display = 'block'; // Muestra el logo de edificio
+            mensajeInterno.style.display='block'
         }
 
     </script>
