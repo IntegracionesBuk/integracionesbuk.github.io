@@ -7,7 +7,6 @@
     <title id="tituloPagina">Manual Integraciones</title>
     <link rel="icon" href="img/logo_buk.png" type="image/x-icon">
     <!-- Agrega la referencia a Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
@@ -16,7 +15,7 @@
         #contenedorImagen {
             position: relative;
             width: 100vw;
-            height: 95vh;
+            height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -68,6 +67,11 @@
         </div>
     </div>
     <h5 class="color-titulo text-center" id="mensajeInterno">Este manual es de uso Interno BUK, no compartir con cliente</h5>
+    <!-- Alerta de SSO -->
+    <div id="alertaSSO" class="alert alert-warning alert-dismissible fade show" role="alert" style="display: none;">
+        Tienes errores en la configuración del SSO? Revisa nuestro documento de errores <a href="https://docs.google.com/document/d/1hoJQawVGAUrZCKOW1_xomSSXZ5Sgdwp1s7iPNJpbq8o/edit?usp=sharing" target="_blank" class="alert-link">Presiona aquí</a>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <div id="contenedorImagen">
         <img id="imagenGrande" alt="Imagen" src="imagenes/Inicio.png">
     </div>
@@ -108,12 +112,24 @@
             </div>
         </div>
     </div>
+
     <!-- SCRIPT -->
     <script src="/opciones.js"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const opcionSeleccionada = urlParams.get('option');
         let modalAbierto = false;
+
+        // Mostrar alerta si la opción seleccionada es SSO
+        function verificarSSO() {
+            if (opcionSeleccionada === 'sso_oauth' || opcionSeleccionada === 'sso_saml') {
+                document.getElementById('alertaSSO').style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            verificarSSO();
+        });
 
         // Event listener para el evento de teclado
         document.addEventListener('keydown', function (event) {
@@ -299,13 +315,8 @@
 
     <!-- Agrega la referencia a Bootstrap JS y Popper.js (necesarios para algunas funcionalidades de Bootstrap) -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 
 </body>
 
