@@ -122,9 +122,14 @@
 
         // Mostrar alerta si la opción seleccionada es SSO
         function verificarSSO() {
-            if (opcionSeleccionada === 'sso_oauth' || opcionSeleccionada === 'sso_saml') {
+            if(manual_cliente === "si"){
+                document.getElementById('alertaSSO').style.display = 'none';
+            }else{
+                if (opcionSeleccionada === 'sso_oauth' || opcionSeleccionada === 'sso_saml' && manual_cliente ===null) {
                 document.getElementById('alertaSSO').style.display = 'block';
             }
+            }
+            
         }
 
         document.addEventListener('DOMContentLoaded', function() {
