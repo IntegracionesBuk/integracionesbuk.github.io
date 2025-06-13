@@ -44,7 +44,7 @@ window.opciones = {
         "imagenes/Termino.png",
     ],
 
-    centralizacion_sftp_baja: [
+    centralizacion_sftp: [
         "imagenes/centra_a_sftp_1.png",
         "imagenes/centra_a_sftp_2.png",
         "imagenes/centra_a_sftp_3.png",
